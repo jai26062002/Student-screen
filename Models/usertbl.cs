@@ -11,11 +11,9 @@ namespace signup.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class usertbl
     {
-        [DisplayName("Roll Number")]
         public int userid { get; set; }
         public string username { get; set; }
         public string email { get; set; }

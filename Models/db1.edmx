@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="jaicsModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'jaics.dbo.jai1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="jai1">
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="rollno" Type="int" />
+        </EntityType>-->
+        <EntityType Name="studenttbl">
+          <Key>
+            <PropertyRef Name="Roll Number" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Roll Number" Type="int" Nullable="false" />
+          <Property Name="Academic Year" Type="int" Nullable="false" />
+          <Property Name="Semester" Type="int" Nullable="false" />
+          <Property Name="SSLC Percantage" Type="float" Nullable="false" />
+          <Property Name="SSLC Marksheet" Type="varbinary(max)" Nullable="false" />
+          <Property Name="HSLC Percenatge" Type="float" Nullable="false" />
+          <Property Name="HSLC Marksheet" Type="varbinary(max)" Nullable="false" />
+          <Property Name="CGPA" Type="float" Nullable="false" />
+          <Property Name="Active Blacklogs" Type="bit" Nullable="false" />
+          <Property Name="Phone Number" Type="float" Nullable="false" />
+          <Property Name="personal Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Resume Upload" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Photo Upload" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usertbl">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="passcode" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="jaicsModel1StoreContainer">
+          <EntitySet Name="studenttbl" EntityType="Self.studenttbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usertbl" EntityType="Self.usertbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="jaicsModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="studenttbl">
+          <Key>
+            <PropertyRef Name="Roll_Number" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Roll_Number" Type="Int32" Nullable="false" />
+          <Property Name="Academic_Year" Type="Int32" Nullable="false" />
+          <Property Name="Semester" Type="Int32" Nullable="false" />
+          <Property Name="SSLC_Percantage" Type="Double" Nullable="false" />
+          <Property Name="SSLC_Marksheet" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="HSLC_Percenatge" Type="Double" Nullable="false" />
+          <Property Name="HSLC_Marksheet" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="CGPA" Type="Double" Nullable="false" />
+          <Property Name="Active_Blacklogs" Type="Boolean" Nullable="false" />
+          <Property Name="Phone_Number" Type="Double" Nullable="false" />
+          <Property Name="personal_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Resume_Upload" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="Photo_Upload" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usertbl">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="passcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="jaicsEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="studenttbls" EntityType="Self.studenttbl" />
+          <EntitySet Name="usertbls" EntityType="Self.usertbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="jaicsModel1StoreContainer" CdmEntityContainer="jaicsEntities1">
+          <EntitySetMapping Name="studenttbls">
+            <EntityTypeMapping TypeName="jaicsModel1.studenttbl">
+              <MappingFragment StoreEntitySet="studenttbl">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Roll_Number" ColumnName="Roll Number" />
+                <ScalarProperty Name="Academic_Year" ColumnName="Academic Year" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="SSLC_Percantage" ColumnName="SSLC Percantage" />
+                <ScalarProperty Name="SSLC_Marksheet" ColumnName="SSLC Marksheet" />
+                <ScalarProperty Name="HSLC_Percenatge" ColumnName="HSLC Percenatge" />
+                <ScalarProperty Name="HSLC_Marksheet" ColumnName="HSLC Marksheet" />
+                <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+                <ScalarProperty Name="Active_Blacklogs" ColumnName="Active Blacklogs" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="personal_Email" ColumnName="personal Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Resume_Upload" ColumnName="Resume Upload" />
+                <ScalarProperty Name="Photo_Upload" ColumnName="Photo Upload" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usertbls">
+            <EntityTypeMapping TypeName="jaicsModel1.usertbl">
+              <MappingFragment StoreEntitySet="usertbl">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="passcode" ColumnName="passcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="jaicsModel1StoreContainer" CdmEntityContainer="jaicsEntities1">
+    <EntitySetMapping Name="studenttbls">
+      <EntityTypeMapping TypeName="jaicsModel1.studenttbl">
+        <MappingFragment StoreEntitySet="studenttbl">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Roll_Number" ColumnName="Roll Number" />
+          <ScalarProperty Name="Academic_Year" ColumnName="Academic Year" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="SSLC_Percantage" ColumnName="SSLC Percantage" />
+          <ScalarProperty Name="SSLC_Marksheet" ColumnName="SSLC Marksheet" />
+          <ScalarProperty Name="HSLC_Percenatge" ColumnName="HSLC Percenatge" />
+          <ScalarProperty Name="HSLC_Marksheet" ColumnName="HSLC Marksheet" />
+          <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+          <ScalarProperty Name="Active_Blacklogs" ColumnName="Active Blacklogs" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+          <ScalarProperty Name="personal_Email" ColumnName="personal Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Resume_Upload" ColumnName="Resume Upload" />
+          <ScalarProperty Name="Photo_Upload" ColumnName="Photo Upload" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usertbls">
+      <EntityTypeMapping TypeName="jaicsModel1.usertbl">
+        <MappingFragment StoreEntitySet="usertbl">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passcode" ColumnName="passcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

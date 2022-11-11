@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,9 +150,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\db1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\db1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\loginviewmodel.cs" />
+    <Compile Include="Models\studenttbl.cs">
+      <DependentUpon>db1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\studentviewmodel.cs" />
     <Compile Include="Models\usertbl.cs">
-      <DependentUpon>db.tt</DependentUpon>
+      <DependentUpon>db1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,6 +194,16 @@
       <DependentUpon>db.edmx</DependentUpon>
       <LastGenOutput>db.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\db1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db1.edmx</DependentUpon>
+      <LastGenOutput>db1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\db1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db1.edmx</DependentUpon>
+      <LastGenOutput>db1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\db.edmx">
@@ -182,6 +212,13 @@
     </EntityDeploy>
     <Content Include="Models\db.edmx.diagram">
       <DependentUpon>db.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\db1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\db1.edmx.diagram">
+      <DependentUpon>db1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -210,6 +247,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home1\Login.cshtml" />
     <Content Include="Views\Home1\Signup1.cshtml" />
+    <Content Include="Views\Student\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

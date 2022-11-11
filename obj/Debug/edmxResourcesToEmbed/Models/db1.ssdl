@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="jaicsModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'jaics.dbo.jai1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="jai1">
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="rollno" Type="int" />
+        </EntityType>-->
+  <EntityType Name="studenttbl">
+    <Key>
+      <PropertyRef Name="Roll Number" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Roll Number" Type="int" Nullable="false" />
+    <Property Name="Academic Year" Type="int" Nullable="false" />
+    <Property Name="Semester" Type="int" Nullable="false" />
+    <Property Name="SSLC Percantage" Type="float" Nullable="false" />
+    <Property Name="SSLC Marksheet" Type="varbinary(max)" Nullable="false" />
+    <Property Name="HSLC Percenatge" Type="float" Nullable="false" />
+    <Property Name="HSLC Marksheet" Type="varbinary(max)" Nullable="false" />
+    <Property Name="CGPA" Type="float" Nullable="false" />
+    <Property Name="Active Blacklogs" Type="bit" Nullable="false" />
+    <Property Name="Phone Number" Type="float" Nullable="false" />
+    <Property Name="personal Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Resume Upload" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Photo Upload" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usertbl">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="passcode" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="jaicsModel1StoreContainer">
+    <EntitySet Name="studenttbl" EntityType="Self.studenttbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usertbl" EntityType="Self.usertbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
